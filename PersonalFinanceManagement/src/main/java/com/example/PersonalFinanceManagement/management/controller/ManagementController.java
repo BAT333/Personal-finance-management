@@ -1,7 +1,6 @@
 package com.example.PersonalFinanceManagement.management.controller;
 
-import com.example.PersonalFinanceManagement.management.model.DataManagement;
-import com.example.PersonalFinanceManagement.management.model.DataManagementList;
+import com.example.PersonalFinanceManagement.management.model.*;
 import com.example.PersonalFinanceManagement.management.service.ManagementService;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -24,9 +23,20 @@ public class ManagementController {
 
     }
     @GetMapping
-    public <T> T list(@RequestBody DataManagementList dataManagementList){
+    public DataManagementInformation list(@RequestBody DataManagementList dataManagementList){
         return service.ManagementList(dataManagementList);
     }
+
+    @GetMapping("/year")
+    public List<CategoryYear> listCategoryYear(@RequestBody DataManagementList dataManagementList){
+        return service.ManagementListYear(dataManagementList);
+    }
+    @GetMapping("/month")
+    public List<CategoryMonth> listExpense(@RequestBody DataManagementList dataManagementList){
+        return service.ManagementListMonth(dataManagementList);
+    }
+
+
 
 
 
