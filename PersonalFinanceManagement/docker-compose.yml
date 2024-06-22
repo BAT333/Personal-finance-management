@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: client_db
+    ports:
+      - "3306:3306"
+    volumes:
+      - dados_dockers:/var/lib/mysql
+
+volumes:
+  dados_dockers:
+

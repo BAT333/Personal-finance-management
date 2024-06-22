@@ -1,0 +1,23 @@
+
+spring:
+  jackson:
+    time-zone: Brazil/East
+    date-format: yyyy-MM-dd HH:mm:ss
+  datasource:
+    username: root
+    url: jdbc:mysql://localhost:3306/client_db?createDatabaseIfNotExist=true&serverTimezone=America/Sao_Paulo&useSSl=false
+    password: root
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    format-sql: 'true'
+    database: mysql
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+  application:
+    name: PersonalFinanceManagement
+hibernate:
+  dialect: org.hibernate.dialect.MySQL8Dialect
+

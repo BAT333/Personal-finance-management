@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 
 public interface AdjustingTime {
 
-     static LocalDate StartOfMonth(LocalDate l) {
+    static LocalDate StartOfMonth(LocalDate l) {
 
         String local = l.toString();
         int year = Integer.parseInt(local.split("-")[0]);
@@ -13,7 +13,7 @@ public interface AdjustingTime {
         return LocalDate.of(year, month, 1);
     }
 
-     static LocalDate EndOfMonth(LocalDate l) {
+    static LocalDate EndOfMonth(LocalDate l) {
         return StartOfMonth(l.plusMonths(1)).minusDays(1);
     }
     private static LocalDate starYear(LocalDate l) {
